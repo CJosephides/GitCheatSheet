@@ -567,8 +567,20 @@ Importantly, note how our `origin/master` is *not* updated.
 ```
 git config --global diff.tool vimdiff
 git config --global merge.tool vimdiff
-git config merge.conflictstyle diff3
+git config --global merge.conflictstyle diff3
 ```
+
+* To use vimdiff as the diff tool, do: `git difftool ...`. Arguments can be, for example: `git difftool origin/master` or `git difftool master origin/master` to choose how the versions are arranged.
+
+* From the vimdiff merge tool, move the cursor to a merge conflict area and then do:
+
+```
+:diffg RE  " get from REMOTE
+:diffg BA  " get from BASE
+:diffg LO  " get from LOCAL
+```
+
+Do this for all conflicts. A fast way to save and quit multiple files is `:wqa`. Remember to run `git commit` to finish the merge.
 
 # References
 
