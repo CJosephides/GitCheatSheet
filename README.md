@@ -558,6 +558,18 @@ c_3     c_2 (foo)
 
 Importantly, note how our `origin/master` is *not* updated. 
 
+# Terminal tools
+
+## Diff and merge
+
+* Set up vim as the diff and merge tool by:
+
+```
+git config --global diff.tool vimdiff
+git config --global merge.tool vimdiff
+git config merge.conflictstyle diff3
+```
+
 # References
 
 * [Learn Git Branching](https://learngitbranching.js.org)
